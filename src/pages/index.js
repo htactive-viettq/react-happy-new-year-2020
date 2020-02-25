@@ -99,6 +99,7 @@ const IndexPage = () => (
     <Today>Hôm nay là ngày {moment().format('DD-MM-YYYY, h:mm:ss a')}</Today>
     <div> HT ACTIVE </div>
     <div> HT BATMINTON </div>
+    <div> HT FOOTBALL </div>
     <Countdown timeTillDate="01 25 2020, 00:00 am" timeFormat="MM DD YYYY, h:mm a" />
     </CountDownWrapper>
     <AudioWrapper>
