@@ -12,15 +12,12 @@ class Countdown extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      const { timeTillDate, timeFormat } = this.props;
-      const then = moment(timeTillDate, timeFormat);
-      const now = moment();
-      const countdown = moment(then - now);
-      const days = countdown.format('D');
-      const hours = countdown.format('HH');
-      const minutes = countdown.format('mm');
-      const seconds = countdown.format('ss');
-
+      const { timeTillDate } = this.props;
+        let t = Date.parse(timeTillDate) - Date.parse(new Date());
+        let days = Math.floor( t/(1000*60*60*24) );
+        let hours = Math.floor( (t/(1000*60*60)) % 24 );
+        let minutes = Math.floor( (t/1000/60) % 60 );
+        let seconds = Math.floor( (t/1000) % 60 );
       this.setState({ days, hours, minutes, seconds });
     }, 1000);
   }
@@ -126,7 +123,6 @@ function describeArc(x, y, radius, startAngle, endAngle) {
   return d;
 }
 
-// From StackOverflow: https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
 function mapNumber(number, in_min, in_max, out_min, out_max) {
   return (
     ((number - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
