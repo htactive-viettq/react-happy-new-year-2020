@@ -97,10 +97,7 @@ const IndexPage = () => (
     </GridContainer>
     <CountDownWrapper id="count-down-wrapper">
     <Today>Hôm nay là ngày {moment().format('DD-MM-YYYY, h:mm:ss a')}</Today>
-    <div> HT ACTIVE </div>
-    <div> HT BATMINTON </div>
-    <div> HT FOOTBALL </div>
-    <Countdown timeTillDate="01 25 2020, 00:00 am" timeFormat="MM DD YYYY, h:mm a" />
+    <Countdown timeTillDate="02 12 2021, 00:00 am" timeFormat="MM DD YYYY, h:mm a" />
     </CountDownWrapper>
     <AudioWrapper>
       <audio autoplay controls>
